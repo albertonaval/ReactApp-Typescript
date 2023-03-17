@@ -3,7 +3,59 @@ html{
 }
 
 h1{
-  margin: 2rem auto;
   text-align: center;
-  color: whitesmoke;
+  color: rgb(50, 50, 50);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+ul,
+h4 {
+  margin: 3rem auto;
+  padding: 0 auto;
+  text-align: center;
+
+}
+
+img {
+  border-radius: 200px;
+  height: auto;
+  width: 50px;
+}
+
+ul li {
+  border-radius: 4px;
+  border: 1px solid #1c1c1c;
+  list-style: none;
+  margin-bottom: 16px;
+  max-width: 320px;
+  padding: 8px 32px;
+  box-shadow: 2px 4px #1c1c1c;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  font-family: inherit;
+  margin-bottom: 8px;
+  padding-left: 5px;
+  background-color: #1c1c1c;
+  border: 1px solid #1c1c1c;
+  border-radius: 4px;
+}
+
+form input {
+  background-color: #1c1c1c;
+  border: 1px solid #1c1c1c;
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin: 4px 4px;
+}
+
+form input:focus {
+  border: 1px solid #1c1c1c;
+  border-radius: 4px;
 }

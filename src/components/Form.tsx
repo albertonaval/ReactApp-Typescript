@@ -6,9 +6,13 @@ interface FormState {
     inputValues: Sub
 }
 
+interface FormProps {
+    onNewSub: (newSub: Sub) => void
+}
 
 
-const Form = () => {
+
+const Form = ({onNewSub}: FormProps) => {
 
     const [inputValues, setInputValues] = useState<FormState["inputValues"]>({
         nick: '',
@@ -18,7 +22,10 @@ const Form = () => {
     })
 
 
-    const handleSubmit = () => { }
+    const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        onNewSub(inputValues)
+    }
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setInputValues({
@@ -31,8 +38,8 @@ const Form = () => {
         <div>
             <form onSubmit={handleSubmit}>
                 <input onChange={handleChange} value={inputValues.nick} type="text" placeholder="Nick" name="nick" />
-                <input onChange={handleChange}  value={inputValues.subMonths} type="text" placeholder="Months" name="subMonths"/>
-                <input onChange={handleChange}  value={inputValues.avatar} type="number" placeholder="avatar" name="avatar" />
+                <input onChange={handleChange}  value={inputValues.subMonths} type="number" placeholder="Months" name="subMonths"/>
+                <input onChange={handleChange}  value={inputValues.avatar} type="text" placeholder="avatar" name="avatar" />
                 <textarea onChange={handleChange}  value={inputValues.description}  placeholder="description" name="description" />
                 <button>Save new Sub!</button>
             </form>
